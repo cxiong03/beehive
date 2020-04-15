@@ -21,11 +21,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Welcome to BrainHive!</h1>
-        {this.renderPosts()}
-        {/* {<Resource resource={this.resource[0]} />}
-        {<Resource resource={this.resource[1]} />}
-        {<Resource resource={this.resource} />} */}
+        <div className="header">
+          <h1 className="title">Welcome to BrainHive!</h1>
+        </div>
+        <div className="resourceList">{this.renderPosts()}</div>
       </div>
     );
   }
