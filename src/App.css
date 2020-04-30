@@ -46,11 +46,12 @@
   width: 80%;
   max-width: 500px;
   box-shadow: 5px 3px 5px #000000;
-  background-color: #f7f7f7;
+  background-color: rgb(157, 226, 247);
+  /* #90a8ca; */
 }
 
 .box:hover {
-  box-shadow: 15px 9px 15px black;
+  box-shadow: 15px 9px 15px #0e3b79;
 }
 
 .resourceList {
@@ -65,7 +66,8 @@
   display: flex;
   padding-left: 2rem;
   margin-bottom: 1.5rem;
-  background-color: darkgoldenrod;
+  background-color: #0e3b79;
+  /* (87, 169, 194) */
 
 }
 
@@ -73,10 +75,10 @@
   display: flex;
   flex: 1;
   font-size: 3rem;
-  font-family: cursive;
+  font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  text-shadow: 1px 8px 16px brown;
-  color: black;
+  text-shadow: 1px 8px 16px rgb(90, 124, 156);
+  color: rgb(234, 244, 248);
 }
 
 .navigation {
