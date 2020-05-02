@@ -3,14 +3,14 @@ class ResourceForm extends Component {
   state = {
     posterName: "",
     resourceAuthor: "",
-    jobSkillLevel: "",
+    authorSkillLevel: "",
     cohort: "",
     title: "",
     categories: "",
     summary: "",
     link: "",
     resourceType: "",
-    datePublished: null,
+    datePublished: "",
     videoLength: "",
     timeToComplete: "",
     rating: "",
@@ -22,10 +22,36 @@ class ResourceForm extends Component {
       [e.target.id]: e.target.value,
     });
   };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    // any data manipulation and validation
+    const newResource = {...this.state};
+    newResource.categories = newResource.categories.split(/\s*,\s*/gm);
+
+    this.props.addResource(newResource);
+    this.setState({
+      posterName: "",
+      resourceAuthor: "",
+      authorSkillLevel: "",
+      cohort: "",
+      title: "",
+      categories: "",
+      summary: "",
+      link: "",
+      resourceType: "",
+      datePublished: "",
+      videoLength: "",
+      timeToComplete: "",
+      rating: "",
+      comments: [],
+    }); 
+  }
+
   render() {
     return (
       <div className="ResourceForm">
-        <form style={styles.form}>
+        <form style={styles.form} onSubmit={this.handleSubmit}>
           {/* <label htmlFor="posterName">Your Name: </label> */}
           <input
             style={styles.input}
@@ -34,6 +60,7 @@ class ResourceForm extends Component {
             placeholder="Your Name"
             value={this.state.posterName}
             onChange={this.handleChange}
+            required
           />
           <input
             style={styles.input}
@@ -44,7 +71,11 @@ class ResourceForm extends Component {
             onChange={this.handleChange}
           />
           <div>
-            <select>
+            <select
+              id="authorSkillLevel" 
+              value={this.state.authorSkillLevel} 
+              onChange={this.handleChange}
+              >
               <option value="" disabled>
                 Author skill level
               </option>

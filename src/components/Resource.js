@@ -7,7 +7,7 @@ const Resource = ({resource}) => {
     return (
         <div className={'box'}>
             <h2>{resource.title}</h2>
-            <p>{resource.author}</p>
+            <p>{resource.resourceAuthor}</p>
             <p>Published on: {resource.datePublished}</p>
             { resource.videoLength ? (<p>Length: {resource.videoLength} minutes</p>) : null }
             {/* conditional ? true code : false code */}
