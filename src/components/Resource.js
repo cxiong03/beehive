@@ -1,11 +1,13 @@
 import React from 'react'
 
-const Resource = ({resource}) => {
-    
+const Resource = ({resource, onSelect }) => {
     // const {resource} = props;
+    const handleClick = () => {
+        onSelect(resource.id)
+    }
 
     return (
-        <div className={'box'}>
+        <div className={'box'} onClick={handleClick}>
             <h2>{resource.title}</h2>
             <p>{resource.resourceAuthor}</p>
             <p>Published on: {resource.datePublished}</p>
