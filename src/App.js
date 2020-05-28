@@ -15,6 +15,7 @@ state = {
 }
 
 addResource = (newResource) => {
+  newResource.id = this.state.resources[this.state.resources.length - 1].id + 1;
   this.setState({
     ...this.state,
     resources: [...this.state.resources, newResource]
@@ -43,7 +44,7 @@ handleSelect = (id) => {
               <ResourceForm addResource={this.addResource} />
             </Route>
             <Route path='/viewCourse/:courseId' >
-              <ViewCourse course={this.state.resources[this.state.selected]}/>
+              <ViewCourse course={this.state.resources[this.state.selected - 1]}/>
             </Route>
           </Switch>
           <p>Chang</p>

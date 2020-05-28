@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 class ResourceForm extends Component {
   state = {
+    id: 0,
     posterName: "",
     resourceAuthor: "",
     authorSkillLevel: "",

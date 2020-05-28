@@ -6,7 +6,7 @@ const ViewCourse = (props) => {
     const {courseId} = useParams()
     return (
     <h3>
-        {course.title} id: {courseId}
+        {course.title}
     </h3>
     )
 }
